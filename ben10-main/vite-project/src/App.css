@@ -1,0 +1,161 @@
+/* App.css - Main application styles */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Ensure smooth transitions between sections */
+.app-container {
+  width: 100%;
+  position: relative;
+}
+
+/* Games section specific styles in App.css */
+.games-section {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure game cards are clickable and interactive */
+.games-section .game-card {
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.games-section .game-card:active {
+  transform: scale(0.98);
+}
+
+/* Ensure game links work properly */
+.games-section .game-card a,
+.games-section .game-card button {
+  pointer-events: auto;
+}
+
+/* Prevent text selection on game cards for better UX */
+.games-section .game-card * {
+  pointer-events: none;
+}
+
+.games-section .game-card .play-button {
+  pointer-events: auto;
+}
+
+/* Smooth scrolling for navigation */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ensure sections don't overlap */
+.games-section,
+.episodes-section {
+  position: relative;
+  z-index: 1;
+}
+
+/* Loading state for games */
+.games-section.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Focus styles for accessibility */
+.games-section .game-card:focus {
+  outline: 3px solid #00ff88;
+  outline-offset: 3px;
+}
+
+.games-section .game-card:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Ensure games grid is responsive */
+@media (max-width: 768px) {
+  .games-section {
+    padding: 60px 15px 30px;
+  }
+}
+
+/* Prevent layout shift */
+.games-section .games-grid {
+  min-height: 400px;
+}
+
+/* Ensure click events work on all browsers */
+.games-section .game-card {
+  -webkit-tap-highlight-color: rgba(0, 255, 136, 0.3);
+}
+
+/* Global button styles - ensure all buttons work */
+button {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+button:focus {
+  outline: 2px solid #00ff88;
+  outline-offset: 2px;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Navbar buttons */
+.navbar .btn {
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.navbar .btn:active {
+  transform: scale(0.95);
+}
+
+/* Navbar links */
+.navbar .nav-links li {
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Slider buttons */
+.slider .arrow {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slider .arrow:hover {
+  transform: scale(1.1);
+}
+
+.slider .arrow:active {
+  transform: scale(0.9);
+}
+
+/* Episode cards - ensure they're clickable */
+.episodes-section .episode-card {
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.episodes-section .episode-card:active {
+  transform: scale(0.98);
+}
+
